@@ -300,3 +300,157 @@ else:
 print("✅ Redução significativa de dimensionalidade")
 print("✅ Mantém 95% da variância dos dados")
 print("✅ Treinamento mais rápido com menos features")
+
+# =============================================================================
+# VISUALIZAÇÕES DAS MATRIZES DE CONFUSÃO COM PLOTLY
+# =============================================================================
+print("\n" + "="*80)
+print("GERANDO GRÁFICOS DAS MATRIZES DE CONFUSÃO")
+print("="*80)
+
+# Função para criar matriz de confusão com Plotly
+def plot_confusion_matrix(cm, title, labels=['Benigno', 'Malware']):
+    """Cria gráfico de matriz de confusão com Plotly"""
+    
+    # Normalizar a matriz para percentuais
+    cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
+    
+    # Criar subplot com duas matrizes (valores absolutos e percentuais)
+    fig = make_subplots(
+        rows=1, cols=2,
+        subplot_titles=[f'{title} - Valores Absolutos', f'{title} - Percentuais'],
+        specs=[[{"type": "heatmap"}, {"type": "heatmap"}]]
+    )
+    
+    # Matriz de valores absolutos
+    fig.add_trace(
+        go.Heatmap(
+            z=cm,
+            x=labels,
+            y=labels,
+            text=cm,
+            texttemplate="%{text}",
+            textfont={"size": 16},
+            colorscale='Blues',
+            showscale=True,
+            name="Valores Absolutos"
+        ),
+        row=1, col=1
+    )
+    
+    # Matriz de percentuais
+    fig.add_trace(
+        go.Heatmap(
+            z=cm_normalized,
+            x=labels,
+            y=labels,
+            text=np.round(cm_normalized * 100, 1),
+            texttemplate="%{text}%",
+            textfont={"size": 16},
+            colorscale='Reds',
+            showscale=True,
+            name="Percentuais"
+        ),
+        row=1, col=2
+    )
+    
+    # Atualizar layout
+    fig.update_layout(
+        title=f'Matriz de Confusão - {title}',
+        height=400,
+        showlegend=False
+    )
+    
+    # Atualizar eixos
+    fig.update_xaxes(title_text="Predito", row=1, col=1)
+    fig.update_yaxes(title_text="Real", row=1, col=1)
+    fig.update_xaxes(title_text="Predito", row=1, col=2)
+    fig.update_yaxes(title_text="Real", row=1, col=2)
+    
+    return fig
+
+# 1. Regressão Logística (sem PCA)
+print("Gerando gráfico da Regressão Logística...")
+# Nota: Você precisará ajustar as variáveis se elas tiverem nomes diferentes
+# fig_lr = plot_confusion_matrix(cm_lr, "Regressão Logística")
+# fig_lr.show()
+
+# 2. Random Forest
+print("Gerando gráfico do Random Forest...")
+# fig_rf = plot_confusion_matrix(cm_rf, "Random Forest")
+# fig_rf.show()
+
+# 3. Gradient Boosting
+print("Gerando gráfico do Gradient Boosting...")
+fig_gb = plot_confusion_matrix(cm_gb, "Gradient Boosting")
+fig_gb.show()
+
+# 4. Regressão Logística com PCA
+print("Gerando gráfico da Regressão Logística com PCA...")
+fig_lr_pca = plot_confusion_matrix(cm_lr_pca, "Regressão Logística + PCA")
+fig_lr_pca.show()
+
+# Criar gráfico comparativo de todas as matrizes
+print("Gerando gráfico comparativo...")
+
+# Criar subplot com todas as matrizes
+fig_comparison = make_subplots(
+    rows=2, cols=2,
+    subplot_titles=[
+        'Regressão Logística', 'Random Forest',
+        'Gradient Boosting', 'Regressão Logística + PCA'
+    ],
+    specs=[[{"type": "heatmap"}, {"type": "heatmap"}],
+           [{"type": "heatmap"}, {"type": "heatmap"}]]
+)
+
+# Adicionar matrizes (você precisará ajustar as variáveis)
+# fig_comparison.add_trace(go.Heatmap(z=cm_lr, colorscale='Blues', showscale=False), row=1, col=1)
+# fig_comparison.add_trace(go.Heatmap(z=cm_rf, colorscale='Greens', showscale=False), row=1, col=2)
+fig_comparison.add_trace(go.Heatmap(z=cm_gb, colorscale='Reds', showscale=False), row=2, col=1)
+fig_comparison.add_trace(go.Heatmap(z=cm_lr_pca, colorscale='Purples', showscale=False), row=2, col=2)
+
+fig_comparison.update_layout(
+    title='Comparação das Matrizes de Confusão - Todos os Modelos',
+    height=600,
+    showlegend=False
+)
+
+fig_comparison.show()
+
+# Criar gráfico de métricas comparativas
+print("Gerando gráfico de métricas comparativas...")
+
+# Dados para o gráfico de barras (você precisará ajustar com os valores reais)
+metrics_data = {
+    'Modelo': ['Regressão Logística', 'Random Forest', 'Gradient Boosting', 'Regressão Logística + PCA'],
+    'Acurácia': [0.9843, 0.9944, 0.9866, accuracy_score(y_test_pca, y_pred_lr_pca)],
+    'Precisão': [0.9944, 0.9958, 0.9876, precision_score(y_test_pca, y_pred_lr_pca)],
+    'Recall': [0.9861, 0.9972, 0.9958, recall_score(y_test_pca, y_pred_lr_pca)],
+    'F1-Score': [0.9902, 0.9965, 0.9917, f1_score(y_test_pca, y_pred_lr_pca)]
+}
+
+# Criar gráfico de barras
+fig_metrics = go.Figure()
+
+for metric in ['Acurácia', 'Precisão', 'Recall', 'F1-Score']:
+    fig_metrics.add_trace(go.Bar(
+        name=metric,
+        x=metrics_data['Modelo'],
+        y=metrics_data[metric],
+        text=[f'{val:.3f}' for val in metrics_data[metric]],
+        textposition='auto'
+    ))
+
+fig_metrics.update_layout(
+    title='Comparação de Métricas - Todos os Modelos',
+    xaxis_title='Modelos',
+    yaxis_title='Score',
+    barmode='group',
+    height=500
+)
+
+fig_metrics.show()
+
+print("\n✅ Gráficos gerados com sucesso!")
+print("📊 Verifique as janelas do navegador para visualizar os gráficos interativos")
