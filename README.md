@@ -1,6 +1,6 @@
 # 📚 Projetos – Pós-Graduação em Agentes Inteligentes (UFG)
 
-Este repositório reúne os projetos desenvolvidos no curso de Pós-Graduação em Agentes Inteligentes da Universidade Federal de Goiás (UFG).
+Este repositório reunirá os projetos desenvolvidos no curso de Pós-Graduação em Agentes Inteligentes da Universidade Federal de Goiás (UFG).
 O objetivo central do programa é formar profissionais capazes de aplicar soluções de Inteligência Artificial (IA) em contextos reais, explorando desde Machine Learning até o desenvolvimento de Agentes Inteligentes e Integrações Customizadas com LLMs (Large Language Models).
 
 # 🎯 Objetivos do Curso
