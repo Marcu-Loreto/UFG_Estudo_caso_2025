@@ -29,13 +29,13 @@ Integração e Deploy – soluções completas, integrando modelos de IA a aplic
 
 Linguagens: Python, SQL, JavaScript
 
-Frameworks de IA/ML: Scikit-learn, TensorFlow, PyTorch
+Bibliotecas de IA/ML: Scikit-learn, TensorFlow, PyTorch, HuggingFace
 
-LLMs e NLP: HuggingFace, LangChain, OpenAI API
+Frameworks de Agentes e LLMs: CrewAI, Agno, LangGraph, LangChain
 
-Integrações: FastAPI, Docker, APIs externas
+Integrações e Deploy: FastAPI, Docker, APIs externas
 
-Ambientes de Desenvolvimento: Jupyter Notebook, VS Code
+Ambientes de Desenvolvimento: Jupyter Notebook, VS Code, Cursor, Windsurf, PyCharm
 
 ## 👥 Público-Alvo
 
