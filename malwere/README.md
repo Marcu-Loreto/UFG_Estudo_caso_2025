@@ -14,7 +14,7 @@ Ler e entender a origem e o objetivo do dataset em sua origem
  analisar o dataset
 
  Treinar 3 modelos de regressao logistica e comparar os resultado dos 3 
- escolher o melhor conforme as lmetricas:
+ escolher o melhor conforme as metricas:
         Acurácia (Accuracy): porcentagem de previsões corretas sobre o total de exemplos. É simples e intuitiva, mas pode ser enganosa em conjuntos de dados desbalanceados.
 
         Precisão (Precision): fração de verdadeiros positivos entre todos os exemplos classificados como positivos. Mede a qualidade das classificações positivas.
