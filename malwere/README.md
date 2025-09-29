@@ -11,7 +11,9 @@ TUNADROMD Dataset. UCI Machine Learning Repository. Disponível em: https://arch
 
 Ler e entender a origem e o objetivo do dataset em sua origem 
  Carregar o Dataset 
- analisar o dataset
+ Analisar o dataset
+       Resolver os dados faltantes ( foram deletados)
+       Resolver o desbalanceamneto na feature target ( Gerado dados complementares)
 
  Treinar 3 modelos de regressao logistica e comparar os resultado dos 3 
  escolher o melhor conforme as metricas:
@@ -26,9 +28,18 @@ Ler e entender a origem e o objetivo do dataset em sua origem
         Área sob a curva ROC (AUC-ROC): mede a capacidade do modelo em distinguir entre classes positivas e negativas, independente do limiar escolhido.
 
         Matriz de confusão: tabela que apresenta verdadeiros positivos, falsos positivos, verdadeiros negativos e falsos negativos, útil para análise detalhada do desempenho.
- Apos escolher o melhro metodo
- Criar um novo dataset e rodat o PCA e um terceiro e rodar o SelectKBest
+ Apos escolher o melhor  metodo por comparação absoluta dos indicadores
 
- Treinar o modelo escolhido na primeira rodada usando os dois novos datasets ( otimizados) e comparar os resultados
+ Foi Criado um novo dataset reduzido, usando  o PCA e comparando os resultados ( metricas) com o Metodo escolhido
 
- Definir o melhor modelo a ser usado
+       O Dataset "otimizado" trouxe os seguintes beneficios:
+              Reduçao do numero absoluto de features de 241 para 66 ( representativas) - Reduçao de 72,6% no custo computacional
+                                          "A aplicação de PCA no dataset TUNADROMD de
+                            monstrou que a redução de dimensionalidade pode ser rea
+                            lizada de forma eficiente, mantendo aproximadamente 95%
+                            da variância explicada e diminuindo o espaço de atributos
+                            em cerca de 64%. Essa simplificação do conjunto de dados
+                            trouxe ganhos claros em termos de custo computacional
+                            e compacidade do modelo, facilitando o treinamento e a
+                            inferência." ( Trecho do relatório final)
+
