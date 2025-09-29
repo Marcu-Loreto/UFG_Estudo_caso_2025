@@ -1,9 +1,9 @@
-# 📚 Projetos – Pós-Graduação em Agentes Inteligentes (UFG)
+## 📚 Projetos – Pós-Graduação em Agentes Inteligentes (UFG)
 
 Este repositório reunirá os projetos desenvolvidos no curso de Pós-Graduação em Agentes Inteligentes da Universidade Federal de Goiás (UFG).
 O objetivo central do programa é formar profissionais capazes de aplicar soluções de Inteligência Artificial (IA) em contextos reais, explorando desde Machine Learning até o desenvolvimento de Agentes Inteligentes e Integrações Customizadas com LLMs (Large Language Models).
 
-# 🎯 Objetivos do Curso
+## 🎯 Objetivos do Curso
 
 Desenvolver competências para emprego de soluções baseadas em IA no mercado e na pesquisa acadêmica.
 
@@ -13,7 +13,7 @@ Explorar LLMs e arquiteturas avançadas para criação de agentes inteligentes.
 
 Projetar soluções integradas, combinando IA, automação e sistemas customizados para diferentes domínios.
 
-# 📂 Estrutura dos Projetos
+## 📂 Estrutura dos Projetos
 
 Cada pasta deste repositório contém projetos que abordam:
 
@@ -25,7 +25,7 @@ Aplicações com LLMs – uso de modelos de linguagem em tarefas de processament
 
 Integração e Deploy – soluções completas, integrando modelos de IA a aplicações práticas (APIs, chatbots, sistemas de recomendação, etc.).
 
-# 🛠️ Tecnologias e Ferramentas Utilizadas
+## 🛠️ Tecnologias e Ferramentas Utilizadas
 
 Linguagens: Python, SQL, JavaScript
 
@@ -37,10 +37,10 @@ Integrações: FastAPI, Docker, APIs externas
 
 Ambientes de Desenvolvimento: Jupyter Notebook, VS Code
 
-# 👥 Público-Alvo
+## 👥 Público-Alvo
 
 Profissionais de tecnologia, pesquisadores e estudantes que desejam aprofundar seus conhecimentos em Inteligência Artificial, com foco em soluções aplicadas, automação inteligente e integrações personalizadas com agentes autônomos.
 
-# 📌 Observação
+## 📌 Observação
 
 Este repositório é um espaço de aprendizado contínuo. Os projetos aqui apresentados refletem tanto exercícios acadêmicos quanto prototipagens de soluções reais, em constante evolução ao longo do curso.
