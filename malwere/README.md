@@ -1,4 +1,3 @@
-
 # Um Estudo de Caso
 
 ## Malware e Segurança Digital: Análise Comparativa com o Dataset TUNADROMD
@@ -8,15 +7,7 @@
 
 ---
 
-<<<<<<< HEAD
-Ler e entender a origem e o objetivo do dataset em sua origem 
- Carregar o Dataset 
- Analisar o dataset
-       Resolver os dados faltantes ( foram deletados)
-       Resolver o desbalanceamneto na feature target ( Gerado dados complementares)
-=======
 ### 🎯 Objetivo do Estudo
->>>>>>> e7715726c91389e48f9a0c036410be0e31bfc537
 
 Este projeto realiza uma **análise exploratória e preditiva** do dataset *TUNADROMD*, com foco na detecção de malwares por meio de modelos de Machine Learning. A abordagem inclui:
 
@@ -30,24 +21,6 @@ Este projeto realiza uma **análise exploratória e preditiva** do dataset *TUNA
 
 #### 1. Importação e Preparação do Ambiente
 
-<<<<<<< HEAD
-        Matriz de confusão: tabela que apresenta verdadeiros positivos, falsos positivos, verdadeiros negativos e falsos negativos, útil para análise detalhada do desempenho.
- Apos escolher o melhor  metodo por comparação absoluta dos indicadores
-
- Foi Criado um novo dataset reduzido, usando  o PCA e comparando os resultados ( metricas) com o Metodo escolhido
-
-       O Dataset "otimizado" trouxe os seguintes beneficios:
-              Reduçao do numero absoluto de features de 241 para 66 ( representativas) - Reduçao de 72,6% no custo computacional
-                                          "A aplicação de PCA no dataset TUNADROMD de
-                            monstrou que a redução de dimensionalidade pode ser rea
-                            lizada de forma eficiente, mantendo aproximadamente 95%
-                            da variância explicada e diminuindo o espaço de atributos
-                            em cerca de 64%. Essa simplificação do conjunto de dados
-                            trouxe ganhos claros em termos de custo computacional
-                            e compacidade do modelo, facilitando o treinamento e a
-                            inferência." ( Trecho do relatório final)
-
-=======
 Foram importadas bibliotecas de análise de dados (*pandas, numpy*), machine learning (*scikit-learn*), estatística (*scipy*) e visualização (*matplotlib, seaborn, plotly*).
 Essas bibliotecas permitiram estruturar o fluxo de análise e facilitar a comparação gráfica entre os resultados dos modelos.
 
@@ -158,4 +131,3 @@ Essas visualizações destacaram que o **Random Forest** continua com melhor des
 
 📘 **Resumo Final:**
 Este estudo evidencia que a combinação de **pré-processamento de dados**, **avaliação de múltiplos modelos** e **redução de dimensionalidade com PCA** é uma estratégia eficiente para aplicações reais de detecção de malware — unindo **precisão preditiva** e **otimização de recursos computacionais**.
->>>>>>> e7715726c91389e48f9a0c036410be0e31bfc537
